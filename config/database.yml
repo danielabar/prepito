@@ -1,0 +1,28 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['DATABASE_NAME'] || "prepito" %>
+  username: <%= ENV['DATABASE_USER'] || "prepito" %>
+  password: <%= ENV['DATABASE_PASSWORD'] || "prepito" %>
+  port: <%= ENV['DATABASE_PORT'] || "5432" %>
+  host: <%= ENV['DATABASE_HOST'] || "127.0.0.1" %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
+
+development:
+  <<: *default
+  port: 5436
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: prepito_test
+  port: 5436
+
+production:
+  <<: *default
+  database: prepito_production
+  username: prepito
+  password: <%= ENV['PREPITO_DATABASE_PASSWORD'] %>
