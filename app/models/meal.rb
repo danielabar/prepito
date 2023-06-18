@@ -3,7 +3,7 @@
 # Table name: meals
 #
 #  id         :bigint           not null, primary key
-#  cook_day   :enum
+#  day_type   :enum
 #  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -16,7 +16,7 @@ class Meal < ApplicationRecord
   has_many :prep_steps
   validates :name, presence: true, uniqueness: true
 
-  enum cook_day: {
+  enum day_type: {
     weeknight: "weeknight",
     weekend: "weekend"
   }

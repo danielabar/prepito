@@ -10,10 +10,10 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
--- Name: meal_cook_day; Type: TYPE; Schema: public; Owner: -
+-- Name: meal_day_type; Type: TYPE; Schema: public; Owner: -
 --
 
-CREATE TYPE public.meal_cook_day AS ENUM (
+CREATE TYPE public.meal_day_type AS ENUM (
     'weeknight',
     'weekend'
 );
@@ -44,7 +44,7 @@ CREATE TABLE public.meals (
     name character varying NOT NULL,
     created_at timestamp(6) without time zone NOT NULL,
     updated_at timestamp(6) without time zone NOT NULL,
-    cook_day public.meal_cook_day
+    day_type public.meal_day_type
 );
 
 

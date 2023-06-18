@@ -3,7 +3,7 @@
 # Table name: meals
 #
 #  id         :bigint           not null, primary key
-#  cook_day   :enum
+#  day_type   :enum
 #  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
