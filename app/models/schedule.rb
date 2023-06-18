@@ -1,5 +1,3 @@
-# TODO: date formatting: formatted_date = time.strftime('%a. %b. %e, %Y')
-# TODO: Enumerable, sort by date
 class Schedule
   attr_reader :tasks
 
@@ -7,9 +5,9 @@ class Schedule
     @tasks = []
   end
 
-  def add_task(task, date)
-    # @tasks << { task:, date: }
-    @tasks << Task.new(task, date)
+  # Nice to have: Awareness of multiple tasks scheduled on the same date
+  def add_task(name, date)
+    @tasks << Task.new(name, date)
   end
 
   def display
