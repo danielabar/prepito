@@ -1,11 +1,12 @@
 class Schedule
   attr_reader :tasks
 
+  # Nice to have: Awareness of multiple tasks scheduled on the same date
+  # probably need a hash here instead of array, but this will affect sorting.
   def initialize
     @tasks = []
   end
 
-  # Nice to have: Awareness of multiple tasks scheduled on the same date
   def add_task(name, date)
     @tasks << Task.new(name, date)
   end

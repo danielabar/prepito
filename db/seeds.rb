@@ -13,6 +13,7 @@ PrepStep.create!(name: "Slice peppers", days_in_advance: 3, meal: rib_steak)
 # https://www.budgetbytes.com/one-pot-teriyaki-chicken-and-rice/
 teriyaki = Meal.create!(name: "Ground Beef Teriykai", day_type: "weeknight")
 PrepStep.create!(name: "Teriyaki sauce", description: "2 tbsp coconut sugar, 1 tsp sriracha, 2 tbsp sesame oil, 1/4 cup soy sauce", days_in_advance: 4, meal: teriyaki)
+PrepStep.create!(name: "Measure rice", description: "1.5 cups", days_in_advance: 4, meal: teriyaki)
 PrepStep.create!(name: "Toast sesame seeds", description: "2 tbsp sesame seeds", days_in_advance: 3, meal: teriyaki)
 PrepStep.create!(name: "Press garlic & grate ginger", days_in_advance: 2, meal: teriyaki)
 PrepStep.create!(name: "Slice green onion", days_in_advance: 1, meal: teriyaki)
@@ -31,3 +32,11 @@ PrepStep.create!(name: "Spice mixes", description: "1/8 tsp salt, 1/8 tsp pepper
 PrepStep.create!(name: "Drain and rinse black beans", days_in_advance: 3, meal: burrito_casserole)
 PrepStep.create!(name: "Steam rice", days_in_advance: 2, meal: burrito_casserole)
 PrepStep.create!(name: "Slice green onion and press garlic", days_in_advance: 1, meal: burrito_casserole)
+
+# https://www.budgetbytes.com/beef-and-tomato-rice-bowl/
+beef_tomato_rice_bowl = Meal.create!(name: "Beef and Tomato Rice Bowl", day_type: "weekend")
+PrepStep.create!(name: "Spice mixes", description: "1 tsp salt, 1/2 tsp pepper, 1/2 tsp oregano, 1/4 tsp cumin", days_in_advance: 7, meal: beef_tomato_rice_bowl)
+PrepStep.create!(name: "Drain chickpeas", days_in_advance: 4, meal: beef_tomato_rice_bowl)
+PrepStep.create!(name: "Dice onion, mushrooms, zuchinni", days_in_advance: 3, meal: beef_tomato_rice_bowl)
+PrepStep.create!(name: "Press garlic", days_in_advance: 2, meal: beef_tomato_rice_bowl)
+
