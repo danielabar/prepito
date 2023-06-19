@@ -1,18 +1,20 @@
 class Schedule
   attr_reader :tasks
 
-  # Nice to have: Awareness of multiple tasks scheduled on the same date
-  # probably need a hash here instead of array, but this will affect sorting.
   def initialize
     @tasks = []
   end
 
-  def add_task(name, date)
-    @tasks << Task.new(name, date)
+  def add_task(name, date, type)
+    @tasks << Task.new(name, date, type)
   end
 
   def task_on_date?(date)
     tasks.any? { |task| task.date == date }
+  end
+
+  def cook_task_on_date?(date)
+    tasks.any? { |task| task.date == date && task.type == "cook" }
   end
 
   def tasks_on_date(date)
@@ -21,6 +23,22 @@ class Schedule
 
   def num_tasks_on_date(date)
     tasks_on_date(date).length
+  end
+
+  # Not used?
+  # def prep_tasks
+  #   tasks.select { |task| task.type == "prep" }
+  # end
+
+  def date_with_fewest_tasks(earliest, latest)
+    counter = {}
+    (earliest..latest).each do |date|
+      next if cook_task_on_date?(date)
+
+      counter[date] = num_tasks_on_date(date)
+    end
+
+    counter.min_by { |_date, count| count }&.first
   end
 
   def display
