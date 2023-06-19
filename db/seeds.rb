@@ -17,6 +17,13 @@ PrepStep.create!(name: "Toast sesame seeds", description: "2 tbsp sesame seeds",
 PrepStep.create!(name: "Press garlic & grate ginger", days_in_advance: 2, meal: teriyaki)
 PrepStep.create!(name: "Slice green onion", days_in_advance: 1, meal: teriyaki)
 
+# https://downshiftology.com/recipes/best-baked-salmon/
+baked_fish = Meal.create!(name: "Baked Fish", day_type: "weeknight")
+PrepStep.create!(name: "Press garlic", days_in_advance: 2, meal: baked_fish)
+PrepStep.create!(name: "Grate lemon zest", days_in_advance: 3, meal: baked_fish)
+PrepStep.create!(name: "Roast frozen veg", days_in_advance: 1, meal: baked_fish)
+PrepStep.create!(name: "Steam rice", days_in_advance: 2, meal: baked_fish)
+
 # https://www.themeatsource.com/bladeroast.html
 pot_roast = Meal.create!(name: "Pot Roast", day_type: "weekend")
 PrepStep.create!(name: "Roast potatoes", days_in_advance: 1, meal: pot_roast)
