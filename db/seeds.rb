@@ -42,4 +42,3 @@ beef_tomato_rice_bowl = Meal.create!(name: "Beef and Tomato Rice Bowl", day_type
 PrepStep.create!(name: "Drain chickpeas", days_in_advance: 4, meal: beef_tomato_rice_bowl)
 PrepStep.create!(name: "Dice onion, mushrooms, zuchinni", days_in_advance: 3, meal: beef_tomato_rice_bowl)
 PrepStep.create!(name: "Press garlic", days_in_advance: 2, meal: beef_tomato_rice_bowl)
-
