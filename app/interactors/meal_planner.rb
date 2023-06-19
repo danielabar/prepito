@@ -19,28 +19,24 @@ class MealPlanner
     cook_day.on_weekend? ? "weekend" : "weeknight"
   end
 
-  # TOOD: Try to avoid multiple tasks on the same day.
-  # If a task says it can be done for example 4 days in advance, it could also be done 3, 2, or 1 days in advance.
-  # Schedule could expose a method like how many tasks are already scheduled for this day?
   def populate_prep_tasks(schedule, cook_day, selected_meal)
     selected_meal.prep_steps.each do |step|
       days_in_advance = step.days_in_advance
       preparation_task = step.name
 
-      preparation_day = find_valid_preparation_day(cook_day, days_in_advance)
+      preparation_day = find_valid_preparation_day(schedule, cook_day, days_in_advance)
       schedule.add_task(preparation_task, preparation_day)
     end
   end
 
-  # FIXME: Prevent dates in the past
-  def find_valid_preparation_day(cooking_day, days_in_advance)
-    # current_day = Time.zone.today
-    cooking_day - days_in_advance.days
+  def find_valid_preparation_day(schedule, cooking_day, days_in_advance)
+    return cooking_day if days_in_advance.zero?
 
-    # valid_day = target_day
-    # valid_day += 1 while valid_day < current_day
+    (0..days_in_advance).each do |offset|
+      preparation_day = cooking_day - offset.days
+      return preparation_day if preparation_day >= Time.zone.today && !schedule.task_on_date?(preparation_day)
+    end
 
-    # valid_day
-    # target_day
+    Time.zone.today
   end
 end

@@ -3,7 +3,6 @@ Meal.destroy_all
 
 # https://www.thespruceeats.com/what-is-a-ribeye-steak-995257
 rib_steak = Meal.create!(name: "Rib Steak and Sautéed Veg", day_type: "weeknight")
-PrepStep.create!(name: "Spice mixes", description: "1 tsp salt, 1 tsp pepper", days_in_advance: 7, meal: rib_steak)
 PrepStep.create!(name: "Wash fresh thyme", days_in_advance: 0, meal: rib_steak)
 PrepStep.create!(name: "Portion butter", days_in_advance: 0, meal: rib_steak)
 PrepStep.create!(name: "Smash garlic", days_in_advance: 1, meal: rib_steak)
@@ -19,8 +18,7 @@ PrepStep.create!(name: "Press garlic & grate ginger", days_in_advance: 2, meal: 
 PrepStep.create!(name: "Slice green onion", days_in_advance: 1, meal: teriyaki)
 
 # https://www.themeatsource.com/bladeroast.html
-pot_roast = Meal.create!(name: "Pot Roast and Potatoes", day_type: "weekend")
-PrepStep.create!(name: "Spice mixes", description: "2 portions each 1/2 tsp salt, 1/2 tsp pepper, 1/2 tsp parsley", days_in_advance: 7, meal: pot_roast)
+pot_roast = Meal.create!(name: "Pot Roast", day_type: "weekend")
 PrepStep.create!(name: "Roast potatoes", days_in_advance: 1, meal: pot_roast)
 PrepStep.create!(name: "Rough chop garlic", days_in_advance: 2, meal: pot_roast)
 PrepStep.create!(name: "Slice onion and dice celery", days_in_advance: 3, meal: pot_roast)
@@ -28,14 +26,12 @@ PrepStep.create!(name: "Slice carrots and parsnips", days_in_advance: 4, meal: p
 
 # https://www.budgetbytes.com/beef-burrito-casserole/
 burrito_casserole = Meal.create!(name: "Beef Burrito Casserole", day_type: "weekend")
-PrepStep.create!(name: "Spice mixes", description: "1/8 tsp salt, 1/8 tsp pepper, 1/2 tbsp chilli powder", days_in_advance: 7, meal: burrito_casserole)
 PrepStep.create!(name: "Drain and rinse black beans", days_in_advance: 3, meal: burrito_casserole)
 PrepStep.create!(name: "Steam rice", days_in_advance: 2, meal: burrito_casserole)
 PrepStep.create!(name: "Slice green onion and press garlic", days_in_advance: 1, meal: burrito_casserole)
 
 # https://www.budgetbytes.com/beef-and-tomato-rice-bowl/
 beef_tomato_rice_bowl = Meal.create!(name: "Beef and Tomato Rice Bowl", day_type: "weekend")
-PrepStep.create!(name: "Spice mixes", description: "1 tsp salt, 1/2 tsp pepper, 1/2 tsp oregano, 1/4 tsp cumin", days_in_advance: 7, meal: beef_tomato_rice_bowl)
 PrepStep.create!(name: "Drain chickpeas", days_in_advance: 4, meal: beef_tomato_rice_bowl)
 PrepStep.create!(name: "Dice onion, mushrooms, zuchinni", days_in_advance: 3, meal: beef_tomato_rice_bowl)
 PrepStep.create!(name: "Press garlic", days_in_advance: 2, meal: beef_tomato_rice_bowl)

@@ -15,19 +15,27 @@ psql -h 127.0.0.1 -p 5436 -U prepito
 `bin/rails c`:
 
 ```ruby
-result = MealPlanner.call(cook_days: [6.days.from_now, 3.days.from_now])
+# Pass in array of dates, not datetime!
+result = MealPlanner.call(cook_days: [6.days.from_now.to_date, 3.days.from_now.to_date])
 result.schedule.display
-# Sat. Jun. 17, 2023: Spice mixes
-# Sat. Jun. 17, 2023: Teriyaki sauce
-# Sun. Jun. 18, 2023: Toast sesame seeds
-# Mon. Jun. 19, 2023: Press garlic & grate ginger
-# Tue. Jun. 20, 2023: Slice carrots and parsnips
-# Tue. Jun. 20, 2023: Slice green onion
-# Wed. Jun. 21, 2023: Slice onion and dice celery
-# Wed. Jun. 21, 2023: Cook Ground Beef Teriykai
-# Thu. Jun. 22, 2023: Rough chop garlic
-# Fri. Jun. 23, 2023: Roast potatoes
-# Sat. Jun. 24, 2023: Cook Pot Roast and Potatoes
+# Mon. Jun. 19, 2023:
+#         Smash garlic
+#         Slice peppers
+#         Slice onion and mushrooms
+#         Steam rice
+#         Slice green onion and press garlic
+# Tue. Jun. 20, 2023:
+#         Spice mixes
+# Wed. Jun. 21, 2023:
+#         Wash fresh thyme
+#         Portion butter
+#         Cook Rib Steak and Sautéed Veg
+# Thu. Jun. 22, 2023:
+#         Drain and rinse black beans
+# Fri. Jun. 23, 2023:
+#         Spice mixes
+# Sat. Jun. 24, 2023:
+#         Cook Beef Burrito Casserole
 ```
 
 ## Model Brainstorming

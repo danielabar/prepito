@@ -11,10 +11,27 @@ class Schedule
     @tasks << Task.new(name, date)
   end
 
+  def task_on_date?(date)
+    tasks.any? { |task| task.date == date }
+  end
+
+  def tasks_on_date(date)
+    tasks.select { |task| task.date == date }
+  end
+
   def display
-    @tasks.sort.each do |task|
-      puts task
+    sorted_tasks = tasks.sort_by(&:date)
+
+    current_date = nil
+
+    sorted_tasks.each do |task|
+      if task.date != current_date
+        puts "#{task.formatted_date}:"
+        current_date = task.date
+      end
+      puts "\t#{task.name}"
     end
+
     nil
   end
 end
