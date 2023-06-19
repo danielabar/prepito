@@ -12,7 +12,7 @@ class Task
   end
 
   def formatted_date
-    "#{date.strftime('%a. %b. %e, %Y')}"
+    date.strftime("%a. %b. %e, %Y")
   end
 
   def to_s
