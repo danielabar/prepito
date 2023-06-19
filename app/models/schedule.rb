@@ -19,6 +19,10 @@ class Schedule
     tasks.select { |task| task.date == date }
   end
 
+  def num_tasks_on_date(date)
+    tasks_on_date(date).length
+  end
+
   def display
     sorted_tasks = tasks.sort_by(&:date)
 
