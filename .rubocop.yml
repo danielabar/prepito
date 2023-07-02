@@ -4,6 +4,7 @@ require:
   - rubocop-thread_safety
 
 AllCops:
+  SuggestExtensions: false
   NewCops: enable
   Exclude:
     - 'db/schema.rb'
@@ -27,7 +28,6 @@ Style/StringLiterals:
   EnforcedStyle: double_quotes
 
 Metrics/BlockLength:
-  IgnoredMethods: ['describe', 'it', 'context']
   Exclude:
     - 'spec/**/*.rb'
 

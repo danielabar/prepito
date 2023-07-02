@@ -2,12 +2,24 @@
 
 Meal planning app wip...
 
+Start Postgres:
+
+```
+docker-compose up
+```
+
 Connect to Postgres db:
 
 ```bash
 psql -h 127.0.0.1 -p 5436 -U prepito
 # enter password from init.sql
 \d table_name
+```
+
+Reseed:
+
+```
+bin/rails db:seed:replant
 ```
 
 ## Usage
